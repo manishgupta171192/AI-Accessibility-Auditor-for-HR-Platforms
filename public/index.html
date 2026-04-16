@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Accessibility Auditor</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="backdrop backdrop-a"></div>
+    <div class="backdrop backdrop-b"></div>
+    <main class="layout">
+      <section class="hero panel">
+        <p class="eyebrow">WCAG audit assistant for HR and payroll teams</p>
+        <h1>Find accessibility risk before legal or employee experience issues surface.</h1>
+        <p class="lede">
+          Scan a dashboard URL or pasted markup, detect common WCAG failures, and export a compliance report with plain-English fixes.
+        </p>
+        <div class="hero-stats" aria-label="Product highlights">
+          <div>
+            <strong>Contrast</strong>
+            <span>Flags low-contrast text patterns in dashboard UI.</span>
+          </div>
+          <div>
+            <strong>ARIA</strong>
+            <span>Finds unnamed controls and unlabelled form fields.</span>
+          </div>
+          <div>
+            <strong>Keyboard</strong>
+            <span>Spots risky focus order and non-keyboard controls.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel form-panel">
+        <form id="audit-form">
+          <div class="field-grid">
+            <label class="field">
+              <span>Target dashboard URL</span>
+              <input id="url" name="url" type="url" placeholder="https://hr.example.com/payroll" />
+            </label>
+            <div class="field-actions">
+              <button id="sample-button" class="secondary" type="button">Load sample HR markup</button>
+              <button class="primary" type="submit">Run audit</button>
+            </div>
+          </div>
+          <label class="field stacked">
+            <span>Or paste dashboard HTML</span>
+            <textarea id="html" name="html" rows="12" placeholder="<main>...</main>"></textarea>
+          </label>
+          <p class="hint">Use URL for publicly reachable pages. Use pasted HTML for internal dashboards behind auth.</p>
+        </form>
+      </section>
+
+      <section class="panel results-panel" aria-live="polite">
+        <div class="results-header">
+          <div>
+            <p class="eyebrow">Latest scan</p>
+            <h2>Audit results</h2>
+          </div>
+          <div class="export-actions">
+            <button id="export-json" class="secondary" type="button" disabled>Export JSON</button>
+            <button id="export-markdown" class="secondary" type="button" disabled>Export Markdown</button>
+            <button id="export-html" class="secondary" type="button" disabled>Export HTML</button>
+          </div>
+        </div>
+        <div id="status" class="status">Run a scan to generate a compliance report.</div>
+        <div id="summary" class="summary-grid"></div>
+        <div id="ai-summary" class="ai-summary"></div>
+        <div id="limitations" class="limitations"></div>
+        <div id="findings" class="findings"></div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

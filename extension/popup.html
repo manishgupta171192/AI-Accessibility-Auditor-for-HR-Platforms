@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Accessibility Auditor</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <p class="eyebrow">Live audit</p>
+      <h1>AI Accessibility Auditor</h1>
+      <p class="intro">Audit the active HR or payroll tab against the local compliance API.</p>
+      <button id="run-audit" class="primary" type="button">Audit active tab</button>
+      <div id="status" class="status">Waiting for scan.</div>
+      <section id="summary" class="summary"></section>
+      <div id="exports" class="exports hidden">
+        <button id="export-json" class="secondary" type="button">JSON</button>
+        <button id="export-markdown" class="secondary" type="button">Markdown</button>
+        <button id="export-html" class="secondary" type="button">HTML</button>
+      </div>
+      <section id="findings" class="findings"></section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

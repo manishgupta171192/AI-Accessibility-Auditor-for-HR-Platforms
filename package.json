@@ -1,0 +1,26 @@
+{
+  "name": "ai-accessibility-auditor-hr-platforms",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Node 12-compatible MVP for auditing HR and payroll dashboards for accessibility issues.",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "node server/index.js",
+    "start": "node server/index.js",
+    "build": "node -e \"console.log('No build step required for this Node 12-compatible MVP.')\"",
+    "check": "node -e \"require('./server/audit'); console.log('Audit module loaded successfully.')\"",
+    "test-ai": "node test-ai-config.js",
+    "test-remediation": "node test-remediation.js"
+  },
+  "engines": {
+    "node": ">=12.22.0"
+  },
+  "dependencies": {
+    "axe-core": "^4.4.3",
+    "css": "^3.0.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsdom": "^19.0.0",
+    "node-fetch": "^2.6.7"
+  }
+}
